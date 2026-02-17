@@ -1,6 +1,11 @@
 @charset "UTF-8";
 
 /* 基本リセットとフォント設定 */
+
+html {
+  scroll-behavior: smooth; /* スムーズスクロール */
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -34,6 +39,31 @@ ul {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
+}
+
+.main-copy,
+.sub-copy,
+.section-title,
+.main-copy,
+.sub-copy,
+.section-title,
+.section-title-blue,
+.partner-title,
+.anniv-num,
+.anniv-text {
+  font-family:
+    "Yu Mincho", "YuMincho", "Hiragino Mincho ProN", "HGS Mincho E",
+    "MS PMincho", "Times New Roman", serif;
+  font-weight: bold;
+}
+.section-title-blue,
+.partner-title,
+.anniv-num,
+.anniv-text {
+  font-family:
+    "Yu Mincho", "YuMincho", "Hiragino Mincho ProN", "HGS Mincho E",
+    "MS PMincho", "Times New Roman", serif;
+  font-weight: bold;
 }
 
 /* --- ヘッダー --- */
@@ -146,7 +176,7 @@ ul {
 .icon-btn:hover {
   background-color: #fff;
   color: #0056b3;
-  box-shadow: 0 0 5px rgba(0, 86, 179, 0.5); /* 少し強調 */
+  box-shadow: 0 0 5px rgba(0, 86, 179, 0.5);
 }
 
 .mail-icon {
@@ -167,6 +197,7 @@ ul {
 
 .menu-icon {
   background-color: #004080;
+  padding-bottom: 2px;
 }
 
 /* --- メインビジュアル --- */
@@ -222,7 +253,7 @@ ul {
 
 /* テキストスライダー部分 */
 .text-slider {
-  width: 60%; /* 左側のテキストエリアの幅 */
+  width: 60%;
   position: relative;
   height: 300px;
 }
@@ -248,14 +279,14 @@ ul {
 .text-slider {
   position: relative;
   width: 100%;
-  height: 300px; /* テキスト量に応じて高さを確保 */
+  height: 300px;
 }
 
 .slide-item {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%; /* 親要素の幅いっぱいに広げる */
+  width: 100%;
   opacity: 0;
   transition: opacity 1.5s ease-in-out;
 
@@ -302,7 +333,7 @@ ul {
 .news-block {
   display: flex;
   align-items: center;
-  background: #fff3f3; /* 独立したテイスト（例：薄い赤背景） */
+  background: #fff3f3;
   border: 1px solid #cc0000;
   padding: 15px 20px;
   border-radius: 4px;
@@ -335,6 +366,10 @@ ul {
   padding: 80px 0;
 }
 
+section[id] {
+  scroll-margin-top: 100px;
+}
+
 .section-title {
   font-size: 28px;
   color: #0056b3;
@@ -354,7 +389,6 @@ ul {
 }
 
 /* --- 事業紹介 --- */
-/* 事業紹介セクション */
 
 .business-intro {
   padding: 80px 0;
@@ -362,10 +396,10 @@ ul {
 
 /* タイトルとコンテンツを囲むラッパー */
 .business-flex-wrapper {
-  display: flex; /* 横並びにする */
-  align-items: flex-start; /* ★重要: 上端を揃える */
-  justify-content: center; /* 全体を中央寄り */
-  gap: 60px; /* タイトルと写真の間隔 */
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 60px;
 }
 
 .business-grid {
@@ -447,9 +481,8 @@ ul {
   flex-direction: column;
 }
 
-.dummy-text {
+.company-text {
   margin-bottom: 30px;
-  font-family: Noto Sans JP;
   font-size: 16px;
 }
 
@@ -465,7 +498,7 @@ ul {
 .view-more,
 .view-more-btn {
   position: relative;
-  padding-bottom: 5px; /* 線との隙間 */
+  padding-bottom: 5px;
   text-decoration: none;
   display: inline-flex;
   transition: opacity 0.3s;
@@ -478,7 +511,7 @@ ul {
   position: absolute;
   bottom: 0;
   left: 0;
-  width: 0; /* 最初は幅0 */
+  width: 0;
   height: 2px; /* 線の太さ */
   background-color: #004080;
   transition: width 0.3s ease-out; /* 伸びるアニメーション */
@@ -670,7 +703,7 @@ ul {
    グローバルメニュー（ドロワー）デザイン
    ========================================= */
 
-/* メニューのベース（初期状態は非表示・画面外など） */
+/* メニューのベース */
 .drawer-menu {
   position: fixed;
   top: 0;
@@ -718,7 +751,8 @@ ul {
 }
 
 .drawer-item a,
-.drawer-label {
+.drawer-label,
+.drawer-link {
   display: flex;
   align-items: center;
   color: #fff;
@@ -757,22 +791,22 @@ ul {
 
 /* --- サブメニュー --- */
 .drawer-sub-list {
-  margin-top: 15px; /* 親項目との間隔 */
-  padding-left: 10px; /* 全体のインデント */
+  margin-top: 15px;
+  padding-left: 10px;
 }
 
 .drawer-sub-list li {
-  margin-bottom: 12px; /* 項目同士の間隔 */
+  margin-bottom: 12px;
 }
 
 .drawer-sub-list a {
   display: block;
-  color: #8fa1b3; /* 添付画像を参考にした落ち着いたグレー青 */
-  font-size: 16px; /* 親項目より少し小さく */
+  color: #8fa1b3;
+  font-size: 16px;
   text-decoration: none;
-  font-weight: 500;
+  font-weight: bold;
   transition: color 0.3s;
-  font-family: "Noto Sans JP", sans-serif;
+  font-family: "Noto Sans JP", sans-serif !important;
 }
 
 .drawer-sub-list a:hover {
@@ -964,19 +998,40 @@ ul {
 }
 
 /* --- 沿革テーブル --- */
-.c-table--history th {
-  background: transparent;
-  padding: 24px 0;
-  vertical-align: top;
-  font-weight: bold;
-  white-space: nowrap;
-  width: 1px; /* 幅を最小化 */
+/* リスト全体の枠 */
+.history-list {
+  width: 100%;
+  border-top: 1px solid #ddd;
+  font-family: "Noto Sans JP", sans-serif;
 }
 
-.c-table--history td {
-  padding: 24px 0 24px 5px;
-  vertical-align: top;
-  line-height: 1.6;
+/* 1行ごとの設定 */
+.history-row {
+  display: flex;
+  align-items: baseline;
+  border-bottom: 1px solid #ddd;
+  padding: 20px 0;
+  margin: 0;
+}
+
+/* 左側：年月 */
+.history-date {
+  width: 180px;
+  min-width: 140px;
+  font-weight: bold;
+  color: #004080;
+  margin: 0;
+  padding-right: 20px;
+  box-sizing: border-box;
+  flex-shrink: 0;
+}
+
+/* 右側：内容 */
+.history-content {
+  flex: 1;
+  margin: 0;
+  line-height: 1.8;
+  color: #333;
 }
 
 /* 年と月の横並び設定 */
@@ -1079,9 +1134,9 @@ ul {
 /* ==================================================
 事業方針
 ================================================== */
-/* ページ全体の余白調整（ヘッダー固定分などを考慮） */
+/* ページ全体の余白調整 */
 .p-vision-page {
-  padding-top: 120px; /* ヘッダーの高さに合わせて調整 */
+  padding-top: 120px;
   padding-bottom: 100px;
 }
 
@@ -1126,7 +1181,7 @@ ul {
 
 /* --- 左側：見出しエリア --- */
 .p-vision-heading-box {
-  width: 25%; /* 左カラムの幅 */
+  width: 25%;
   padding-left: 20px;
   border-left: 5px solid #0056b3;
 }
@@ -1183,7 +1238,7 @@ ul {
 
 /* 箇条書きリスト (事業方針セクション用) */
 .p-vision-list {
-  list-style: none; /* デフォルトの点を消す */
+  list-style: none;
   padding: 0;
   margin: 0;
 }
@@ -1205,6 +1260,204 @@ ul {
   left: 0;
   top: 0;
   color: #333;
+}
+
+/* ==================================================
+事業案内
+================================================== */
+
+.p-service-visual {
+  position: relative;
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+/* イントロテキスト */
+.p-service-intro {
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 15px;
+  line-height: 2;
+  color: #333;
+  margin: 0 auto 60px;
+  max-width: 1200px;
+  text-align: left;
+}
+
+/* ページ内アンカーナビゲーション */
+.p-service-nav {
+  margin-bottom: 80px;
+  width: 100%;
+}
+
+.p-service-nav__list {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: nowrap;
+}
+
+.p-service-nav__item {
+  flex: 1;
+}
+
+.p-service-nav__link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #eef4ff;
+  color: #004a99;
+  font-family: "Noto Sans JP", sans-serif;
+  font-weight: bold;
+  font-size: 14px;
+  padding: 15px 20px;
+  border-radius: 30px;
+  text-align: center;
+  height: 100%;
+  box-sizing: border-box;
+  transition:
+    background-color 0.3s,
+    color 0.3s;
+}
+
+.p-service-nav__link::after {
+  content: "●"; /* デザインにある右側の丸印 */
+  font-size: 10px;
+  margin-left: 10px;
+  color: #004a99;
+}
+
+.p-service-nav__link:hover {
+  background-color: #004a99;
+  color: #fff;
+}
+
+.p-service-nav__link:hover::after {
+  color: #fff;
+}
+
+/* --- 各事業セクション共通 --- */
+.p-service-section {
+  padding: 100px 0;
+}
+
+/* 背景色ありセクション (02) */
+.p-service-section--bg-blue {
+  background-color: #f0f7ff;
+}
+
+/* セクションタイトル (01. xxx) */
+.p-service-section__title {
+  font-family: "FOT-UDMincho Pr6N", serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: #004a99;
+  margin-bottom: 25px;
+  line-height: 1.4;
+}
+
+/* セクションリード文 */
+.p-service-section__lead {
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 15px;
+  line-height: 1.8;
+  margin-bottom: 50px;
+  color: #333;
+}
+
+/* 3カラムグリッド */
+.p-service-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+/* 個別カード */
+.p-service-card__img {
+  width: 100%;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.p-service-card__img img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.p-service-card__text {
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 14px;
+  line-height: 1.7;
+  color: #666;
+}
+
+/* ==================================================
+採用（キャリアリクルート）
+================================================== */
+
+.recruit-container {
+  max-width: 1000px;
+  margin: 0 auto 80px;
+  padding: 0 20px;
+}
+
+.page-title {
+  font-family: var(--font-mincho);
+  font-size: 40px;
+  color: var(--color-blue);
+  text-align: center;
+
+  margin-top: 120px;
+  margin-bottom: 60px;
+
+  padding-bottom: 25px;
+  border-bottom: 1px solid #eee;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+/* 募集がない時のテキストスタイル */
+.no-vacancy-text {
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 1.15rem;
+  text-align: center;
+  margin-top: 60px;
+  color: #333;
+  font-weight: 500;
+}
+
+/* 募集がある時のカード内タイトル */
+.job-card__title {
+  font-family: "FOT-UDMincho Pr6N", serif;
+  font-size: 1.5rem;
+  color: var(--color-blue);
+  margin-bottom: 30px;
+  padding-left: 15px;
+  border-left: 4px solid var(--color-blue);
+}
+
+.job-card__title {
+  font-family: var(--font-mincho);
+  font-size: 24px;
+  color: var(--color-blue);
+  margin-bottom: 25px;
+  border-left: 4px solid var(--color-blue);
+  padding-left: 15px;
+}
+
+.whitespace-pre-wrap {
+  white-space: pre-wrap;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+  .page-title {
+    margin-top: 100px;
+    font-size: 28px;
+  }
+  .job-card {
+    padding: 25px 20px;
+  }
 }
 
 /* ==================================================
@@ -1313,106 +1566,452 @@ ul {
   line-height: 1.6;
 }
 
+/* =========================================
+   お問い合わせフォーム
+   ========================================= */
+.contact-section {
+  background-color: #f9f9f9;
+}
+
+.contact-desc {
+  margin-bottom: 40px;
+}
+
+.contact-form {
+  max-width: 700px;
+  margin: 0 auto;
+  background: #fff;
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.form-group {
+  margin-bottom: 25px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #004080;
+}
+
+.required {
+  background: #cc0000;
+  color: #fff;
+  font-size: 11px;
+  padding: 2px 6px;
+  border-radius: 4px;
+  margin-left: 8px;
+  vertical-align: middle;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  box-sizing: border-box;
+  font-family: inherit;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #004080;
+  outline: none;
+}
+
+.form-submit {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.submit-btn {
+  background-color: #004080;
+  color: #fff;
+  border: none;
+  padding: 15px 60px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 30px;
+  cursor: pointer;
+  transition:
+    background 0.3s,
+    transform 0.1s;
+}
+
+.submit-btn:hover {
+  background-color: #0056b3;
+}
+
+.contact-iframe-wrap {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* iframe内のスクロールバーが出ないように調整する場合 */
+iframe {
+  vertical-align: bottom;
+}
+
 /* ==================================================
-レスポンシブ対応（SP対応）
+   レスポンシブ対応 （タブレット1024px以下)
 ================================================== */
-@media (max-width: 768px) {
-  .header-inner {
-    flex-direction: column;
-    gap: 10px;
+@media (max-width: 1024px) {
+  /* --- ヘッダー（タブレットもSPと同様にPCナビ非表示） --- */
+  .global-nav {
+    display: none;
   }
-  .global-nav ul {
-    gap: 15px;
+
+  /* コンテナの余白を少し詰める */
+  .l-container {
+    padding: 0 3%;
+  }
+
+  /* --- メインビジュアル --- */
+  .top-mv {
+    height: auto;
+    min-height: 500px;
+    padding: 120px 40px 80px;
+    align-items: center;
+    background-position: center;
+  }
+
+  .top-mv-content {
+    flex-direction: column;
     justify-content: center;
   }
 
-  .top-mv {
-    padding-left: 20px;
-    padding-right: 20px;
-    background-position: center, center; /* SP時は背景調整 */
-    background-size: cover;
-  }
-  .main-copy {
-    font-size: 32px;
-    word-break: normal; /* SPでは画面幅に合わせて改行許可 */
-  }
   .text-slider {
-    height: 400px; /* SPで改行が増える分高さを確保 */
-  }
-
-  .business-grid,
-  .flex-row {
-    flex-direction: column;
-    margin-left: 0;
-  }
-  .business-card,
-  .overview-image,
-  .overview-text {
     width: 100%;
-  }
-  .section-title.vertical-text {
-    writing-mode: horizontal-tb;
-    position: static;
-    margin-bottom: 20px;
+    height: auto;
+    min-height: 260px;
+    margin-bottom: 30px;
   }
 
-  .partners-grid {
-    grid-template-columns: 1fr;
+  .top-mv-anniv-box {
+    position: relative;
+    right: auto;
+    top: auto;
+    margin: 0 auto 30px;
+    opacity: 0.25;
   }
 
-  .footer-top {
-    flex-direction: column;
-    gap: 30px;
-  }
-  .footer-nav ul {
-    flex-direction: column;
-    gap: 10px;
+  .main-copy {
+    font-size: 2.5rem; /* 40px相当 */
+    line-height: 1.4;
   }
 
-  .drawer-item .jp {
-    font-size: 18px;
-  }
-  .drawer-sub {
-    padding-left: 0;
-    margin-top: 10px;
+  .sub-copy {
+    font-size: 0.94rem; /* 約15px相当 */
+    line-height: 1.9;
   }
 
   .p-company-info__flex,
   .p-history__flex {
-    flex-direction: column;
+    gap: 30px;
   }
+
+  /* アンカーナビも横並びを維持 */
+  .p-service-nav__list {
+    flex-wrap: nowrap;
+    gap: 10px;
+  }
+
+  .p-service-nav__link {
+    font-size: 13px;
+    padding: 15px 5px;
+    min-height: 70px;
+  }
+
   .p-company-info__map,
   .p-history__images {
+    width: 45%;
+  }
+
+  /* --- 事業案内 --- */
+  .p-service-grid {
+    gap: 20px;
+  }
+
+  .p-service-section__title {
+    font-size: 24px;
+  }
+
+  .p-service-section__lead {
+    font-size: 15px;
+  }
+
+  /* --- 事業紹介タイトル --- */
+  .business-intro .section-title {
+    white-space: nowrap;
+  }
+}
+
+/* ==================================================
+   レスポンシブ対応 (SP: 768px以下)
+================================================== */
+@media (max-width: 768px) {
+  /* --- コンテナ・全体設定 --- */
+  .container,
+  .l-container {
+    padding: 0 20px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .section,
+  .l-section {
+    padding: 60px 0;
+  }
+
+  .section-title {
+    margin-bottom: 15px;
+  }
+
+  /* --- ヘッダー --- */
+  .header {
+    padding: 15px 20px;
+  }
+
+  .header-inner {
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .header .logo img {
+    height: 24px;
+    width: auto;
+  }
+
+  .logo {
+    margin-right: 0;
+  }
+
+  /* PC用メニューはSPでは隠す */
+  .global-nav {
+    display: none;
+  }
+
+  .header-actions {
+    gap: 10px;
+  }
+
+  /* --- メインビジュアル (FV) --- */
+  .top-mv {
+    height: auto;
+    min-height: 500px;
+    padding: 100px 20px 60px;
+    align-items: center;
+    background-position: center;
+  }
+
+  .top-mv-content {
+    flex-direction: column; /* 縦並び */
+    justify-content: center;
+  }
+
+  /* 20th Anniversary 装飾 */
+  .top-mv-anniv-box {
+    position: relative;
+    right: auto;
+    top: auto;
+    margin: 20px auto 40px;
+    opacity: 0.2;
+    z-index: 0;
+  }
+
+  .anniv-num {
+    font-size: 6.25rem; /* 100px相当 */
+  }
+
+  .anniv-text {
+    font-size: 2rem; /* 32px相当 */
+  }
+
+  /* キャッチコピー */
+  .text-slider {
+    width: 100%;
+    height: auto;
+    min-height: 250px;
+    margin-bottom: 20px;
+  }
+
+  .main-copy {
+    font-size: 2rem; /* 32px相当 */
+    line-height: 1.4;
+    margin-bottom: 20px;
+    word-break: normal;
+  }
+
+  .sub-copy {
+    font-size: 0.875rem; /* 14px相当 */
+    line-height: 1.8;
+  }
+
+  /* --- News --- */
+  .news-block {
+    flex-direction: column; /* 縦並び */
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .news-label {
+    margin-right: 0;
+  }
+
+  .news-text {
+    font-size: 0.875rem; /* 14px相当 */
+  }
+
+  /* --- 事業紹介 --- */
+  .business-flex-wrapper {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .business-grid {
+    flex-direction: column;
+    gap: 30px;
     width: 100%;
   }
 
+  .business-card {
+    width: 100%;
+    max-width: none; /* 制限解除 */
+  }
+
+  .card-body h4 {
+    font-size: 1rem; /* 16px相当 */
+  }
+
+  /* --- 会社概要 (Top) --- */
+  .flex-row {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .overview-image,
+  .overview-text {
+    width: 100%;
+  }
+
+  .view-more-btn {
+    margin-top: 10px;
+  }
+
+  /* --- 協力会社・パートナー --- */
+  .partners-grid {
+    grid-template-columns: 1fr; /* 1列にする */
+    gap: 15px;
+    margin-top: 30px;
+  }
+
+  .partner-box {
+    width: 100%;
+    height: 80px;
+    font-size: 1rem; /* 16px相当 */
+  }
+
+  /* 空ボックスはスマホでは非表示にする場合 */
+  .partner-box.empty-box {
+    display: none;
+  }
+
+  /* --- 会社概要 (詳細ページ) --- */
+  .p-page-main {
+    padding-top: 100px;
+  }
+
+  .p-page-main__title {
+    font-size: 2rem; /* 32px相当 */
+  }
+
+  .p-page-main__img img {
+    height: auto;
+  }
+
+  /* --- レイアウトを縦積みに変更（会社概要・沿革） --- */
+  .p-company-info__flex,
+  .p-history__flex {
+    flex-direction: column; /* 縦並びにする */
+    gap: 40px;
+  }
+
+  /* 各要素を横幅いっぱいに */
+  .p-company-info__table-wrap,
+  .p-company-info__map,
+  .p-history__list-wrap,
   .p-history__images {
     width: 100%;
-    flex-direction: row; /* スマホでは横に並べる */
-  }
-  .p-history__img-large,
-  .p-history__img-small {
-    width: calc(50% - 10px) !important;
   }
 
-  .p-privacy__title {
-    font-size: 2rem;
-    margin: 40px 0 40px;
-  }
-  .p-privacy__heading {
-    font-size: 1.4rem;
-    margin-bottom: 20px;
-  }
-  .l-container {
-    padding: 0 15px;
+  /* --- テーブルの調整 --- */
+  .c-table th,
+  .c-table td {
+    padding: 15px 10px; /* パディングを少し狭く */
+    font-size: 14px; /* 文字サイズを調整 */
+    display: block; /* スマホではthとtdを縦に積む（見やすさ重視） */
+    width: 100%;
+    box-sizing: border-box;
   }
 
-  .p-vision-main-title {
-    font-size: 28px;
-    margin-bottom: 20px;
+  .c-table th {
+    background-color: #f4f4f4;
+    border-bottom: none;
   }
 
-  /* 縦並びにする */
+  /* 沿革テーブルは横並びを維持 */
+  .c-table--history th,
+  .c-table--history td {
+    display: table-cell;
+    padding: 20px 5px;
+  }
+
+  /* 年号の幅を確保 */
+  .c-table--history th {
+    width: 90px;
+    white-space: normal; /* 年号の折り返しを許可 */
+  }
+
+  /* --- 画像エリアの調整 --- */
+  .p-company-info__map,
+  .p-history__images {
+    margin-top: 20px;
+  }
+
+  /* Googleマップの高さをスマホ用に調整 */
+  .p-company-info__map iframe {
+    height: 300px;
+  }
+
+  /* 沿革写真（上1枚、下2枚）のバランス維持 */
+  .p-history__images {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  /* 下2枚の写真は横並びを維持 */
+  .p-history__img-bottom {
+    display: flex;
+    gap: 10px;
+  }
+
+  .p-history__img-bottom img {
+    width: calc(50% - 5px);
+    height: 120px;
+  }
+
+  /* --- 事業方針 (Vision) --- */
+  .p-vision-page {
+    padding-top: 100px;
+  }
+
   .p-vision-row {
     flex-direction: column;
     gap: 30px;
@@ -1420,15 +2019,82 @@ ul {
 
   .p-vision-heading-box {
     width: 100%;
-    padding-left: 15px;
     border-left-width: 4px;
+    padding-left: 15px;
+    box-sizing: border-box;
   }
 
   .p-vision-content-box {
     width: 100%;
   }
 
-  .p-vision-item-title {
-    font-size: 18px;
+  .p-vision-visual img {
+    height: auto;
+  }
+
+  /* --- 事業案内 (Service) --- */
+  .p-service-nav__list {
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
+  .p-service-nav__item {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .p-service-section {
+    padding: 60px 0;
+  }
+
+  .p-service-section__title {
+    font-size: 1.375rem; /* 22px相当 */
+  }
+
+  .p-service-grid {
+    grid-template-columns: 1fr; /* 1列に */
+    gap: 30px;
+  }
+
+  .p-service-section__lead {
+    margin-bottom: 30px;
+  }
+
+  /* --- フッター --- */
+  .footer {
+    padding: 40px 0 20px;
+  }
+
+  .footer-top {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .footer-nav ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .footer-logo-area {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* --- ドロワーメニュー --- */
+  .drawer-inner {
+    padding: 80px 20px 40px; /* 閉じるボタンと重ならないよう上を空ける */
+  }
+
+  .drawer-close-btn {
+    top: 20px;
+    right: 20px;
+  }
+
+  .drawer-item .jp {
+    font-size: 1.125rem; /* 18px相当 */
   }
 }
