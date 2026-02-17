@@ -42,8 +42,117 @@
     <link rel="stylesheet" href="./css/reset.css" />
     <link rel="stylesheet" href="./css/style.css" />
 
-    <script type="application/ld+json"></script>
+    <style>
+      :root {
+        --font-mincho: "fot-udmincho-pr6n", serif;
+        --font-sans: "Noto Sans JP", sans-serif;
+      }
+
+      body {
+        font-family: var(--font-sans);
+        color: #333;
+        line-height: 1.8;
+        margin: 0;
+      }
+
+      .recruit-container {
+        max-width: 1000px;
+        margin: 60px auto;
+        padding: 0 20px;
+      }
+
+      h1,
+      h2,
+      h3 {
+        font-family: var(--font-mincho);
+        font-weight: 600;
+      }
+
+      .page-title {
+        font-size: 2.5rem;
+        text-align: center;
+        margin-bottom: 50px;
+        border-bottom: 1px solid #eee;
+        padding-bottom: 20px;
+      }
+
+      /* 募集がない時のスタイル */
+      .no-vacancy {
+        text-align: center;
+        padding: 100px 0;
+      }
+      .no-vacancy h2 {
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+      }
+
+      /* 募集がある時のスタイル（JobPosting用） */
+      .job-card {
+        border: 1px solid #ddd;
+        padding: 40px;
+        background: #f9f9f9;
+      }
+      .job-card h2 {
+        margin-top: 0;
+        color: #004499;
+      }
+      .job-detail-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+      }
+      .job-detail-table th,
+      .job-detail-table td {
+        padding: 15px;
+        border-bottom: 1px solid #ccc;
+        text-align: left;
+      }
+      .job-detail-table th {
+        width: 25%;
+        background: #eee;
+        font-family: var(--font-mincho);
+      }
+      .whitespace-pre-wrap {
+        white-space: pre-wrap;
+      }
+    </style>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org/",
+        "@type": "JobPosting",
+        "title": "新規プロジェクト立ち上げ・組織力向上スタッフ",
+        "description": "新規プロジェクトの立ち上げと組織力向上を担うスタッフを募集。\n\n------------------------------------\n業務内容\n------------------------------------\n\nネット系メディアサービス事業の新規立ち上げを行います\n・プロジェクトの企画立案および推進\n・外部パートナーや業務委託先の管理・調整\n・予算の策定・管理\n\n------------------------------------\n歓迎する人物像\n------------------------------------\n\n・課題発見・解決に積極的に取り組める方\n・変化や新たな挑戦を楽しめる方\n・30代～40代の方を想定したポジションです\n\n------------------------------------\n勤務地\n------------------------------------\n\n当社本社\n------------------------------------\n待遇および福利厚生\n------------------------------------\n\n給与　当社規定\n勤務体系（在宅・フレックスあり）\n社会保険・雇用保険完備\n各種手当あり（交通費手当・家族手当等）\n昇給制度あり（会社規程による）\n産休・育休等制度あり\n\n------------------------------------\n学歴　不問\n",
+        "datePosted": "2026-02-17",
+        "validThrough": "2026-08-31",
+        "employmentType": "CONTRACTOR",
+        "hiringOrganization": {
+          "@type": "Organization",
+          "name": "ソフトレード株式会社",
+          "sameAs": "https://www.softrade.co.jp",
+          "logo": "https://www.softrade.co.jp/images/softrade.jpg"
+        },
+        "applicantLocationRequirements": {
+          "@type": "Country",
+          "name": "JPN"
+        },
+        "jobLocation": {
+          "@type": "Place",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "道玄坂1-12-1渋谷マークシティウエスト２２F",
+            "addressLocality": "渋谷区",
+            "addressRegion": "東京都",
+            "postalCode": "150-0043",
+            "addressCountry": "JP"
+          }
+        },
+        "baseSalary": "",
+        "jobLocationType": "TELECOMMUTE"
+      }
+    </script>
   </head>
+
   <body>
     <header class="header">
       <div class="header-inner">
@@ -58,10 +167,7 @@
 
         <nav class="global-nav">
           <ul>
-            <li class="nav-item">
-              <a href="company.html">会社概要</a>
-              <div class="dropdown-menu pos-center"></div>
-            </li>
+            <li class="nav-item"><a href="company.html">会社概要</a></li>
             <li class="nav-item"><a href="vision.html">事業方針</a></li>
             <li class="nav-item"><a href="service.html">事業案内</a></li>
             <li class="nav-item"><a href="recruit.html">採用情報</a></li>
@@ -103,169 +209,77 @@
               </g>
             </svg>
           </a>
-          <a href="#" class="icon-btn menu-icon" aria-label="Menu">≡</a>
+          <a href="#contact" class="icon-btn menu-icon" aria-label="Menu">≡</a>
         </div>
       </div>
     </header>
 
-    <main class="l-main">
-      <div class="p-page-main">
-        <div class="l-container">
-          <h1 class="p-page-main__title">会社概要</h1>
-        </div>
-        <div class="p-page-main__img">
-          <img src="images/company_1.jpg" alt="都市の風景" />
-        </div>
+    <main class="recruit-container">
+      <h1 class="page-title">キャリアリクルート</h1>
+
+      <div class="no-vacancy-wrapper">
+        <p class="no-vacancy-text">現在、募集案件はございません。</p>
       </div>
 
-      <section class="p-company-info l-section">
-        <div class="l-container">
-          <h2 class="c-section-title">会社概要</h2>
-          <div class="p-company-info__flex">
-            <div class="p-company-info__table-wrap">
-              <table class="c-table">
-                <tr>
-                  <th>会社名</th>
-                  <td>
-                    ソフトトレード株式会社<br />
-                    （英文表記：SOFTrade Corporation）
-                  </td>
-                </tr>
-                <tr>
-                  <th>設立</th>
-                  <td>平成17年（2005年）10月11日</td>
-                </tr>
-                <tr>
-                  <th>所在地</th>
-                  <td>
-                    東京都渋谷区道玄坂１丁目１２番１号<br />
-                    渋谷マークシティウエスト22F
-                  </td>
-                </tr>
-                <tr>
-                  <th>事業目的</th>
-                  <td>
-                    <ul class="c-list-dot">
-                      <li>インターネットによる情報サービス業</li>
-                      <li>
-                        インターネットを利用した通信販売業、情報提供の仲介
-                      </li>
-                      <li>電気通信に係るコンサルティング業務</li>
-                      <li>
-                        コンピュータおよび周辺機器、ソフトウェアの開発・販売
-                      </li>
-                      <li>出版事業</li>
-                      <li>広告代理店業務</li>
-                    </ul>
-                  </td>
-                </tr>
-              </table>
-            </div>
-            <div class="p-company__map">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3241.7647197183805!2d139.6986262!3d35.658167999999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188b54366a2d13%3A0xcdcc0fc6ab4b2246!2z44Oq44O844K444Oj44K55riL6LC344Oe44O844Kv44K344OG44Kk!5e0!3m2!1sja!2sjp!4v1770896009921!5m2!1sja!2sjp"
-                width="400"
-                height="450"
-                style="border: 0"
-                allowfullscreen=""
-                loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"
-              ></iframe>
+      <!-- 募集がない時： 下記の [募集案件ここから] 前後に
+      をつけてコメントアウトする
+      ============================================================= 
+
+      <section class="job-listing">
+        <div class="job-card">
+          <h2 class="job-card__title">
+            新規プロジェクト立ち上げ・組織力向上スタッフ
+          </h2>
+          <div class="job-info-box">
+            <div class="p-vision-item-text whitespace-pre-wrap">
+              ネット系メディアサービス事業の新規立ち上げを行います
+              ・プロジェクトの企画立案および推進
+              ・外部パートナーや業務委託先の管理・調整 ・予算の策定・管理
+              ------------------------------------ 歓迎する人物像
+              ------------------------------------
+              ・課題発見・解決に積極的に取り組める方
+              ・変化や新たな挑戦を楽しめる方
+              ・30代～40代の方を想定したポジションです
+              ------------------------------------ 勤務地
+              ------------------------------------ 当社本社
+              ------------------------------------ 待遇および福利厚生
+              ------------------------------------ 給与　当社規定
+              勤務体系（在宅・フレックスあり） 社会保険・雇用保険完備
+              各種手当あり（交通費手当・家族手当等）
+              昇給制度あり（会社規程による） 産休・育休等制度あり
+              ------------------------------------ 学歴　不問
             </div>
           </div>
         </div>
+
+        <script type="application/ld+json">
+          {
+            "@context": "https://schema.org/",
+            "@type": "JobPosting",
+            "title": "新規プロジェクト立ち上げ・組織力向上スタッフ",
+            "description": "新規プロジェクトの立ち上げと組織力向上を担うスタッフを募集...",
+            "datePosted": "2026-02-17",
+            "hiringOrganization": {
+              "@type": "Organization",
+              "name": "ソフトレード株式会社",
+              "sameAs": "https://www.softrade.co.jp"
+            },
+            "jobLocation": {
+              "@type": "Place",
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "道玄坂1-12-1渋谷マークシティウエスト２２F",
+                "addressLocality": "渋谷区",
+                "addressRegion": "東京都",
+                "postalCode": "150-0043",
+                "addressCountry": "JP"
+              }
+            }
+          }
+        </script>
       </section>
-
-      <section class="p-history l-section">
-        <div class="l-container">
-          <h2 class="c-section-title">会社沿革</h2>
-
-          <div class="p-history__flex">
-            <div class="p-history__list-wrap">
-              <div class="history-list">
-                <dl class="history-row">
-                  <dt class="history-date">平成17年 10月</dt>
-                  <dd class="history-content">創業</dd>
-                </dl>
-
-                <dl class="history-row">
-                  <dt class="history-date">平成18年 7月</dt>
-                  <dd class="history-content">
-                    コミックを携帯で読む公式サイト｢コミックファンタジア｣を開設
-                  </dd>
-                </dl>
-
-                <dl class="history-row">
-                  <dt class="history-date">平成21年 4月</dt>
-                  <dd class="history-content">
-                    東京都を中心とした官公庁のWebサイトの運営業務を開始
-                  </dd>
-                </dl>
-
-                <dl class="history-row">
-                  <dt class="history-date">平成21年 10月</dt>
-                  <dd class="history-content">iPhoneにて電子書籍の販売</dd>
-                </dl>
-
-                <dl class="history-row">
-                  <dt class="history-date">平成25年 4月</dt>
-                  <dd class="history-content">
-                    ファイル管理・送受信サービス -WebFile- 代理販売業務を開始
-                  </dd>
-                </dl>
-
-                <dl class="history-row">
-                  <dt class="history-date">平成25年 11月</dt>
-                  <dd class="history-content">
-                    パソコンレスキュー業務を開始<br />
-                    REC情報サイト ローカーボプラスワンの運営を開始
-                  </dd>
-                </dl>
-
-                <dl class="history-row">
-                  <dt class="history-date">平成28年 9月</dt>
-                  <dd class="history-content">東京オフィスを四ツ谷に移転</dd>
-                </dl>
-
-                <dl class="history-row">
-                  <dt class="history-date">平成29年 11月</dt>
-                  <dd class="history-content">
-                    決算日を9月30日から7月31日に変更
-                  </dd>
-                </dl>
-
-                <dl class="history-row">
-                  <dt class="history-date">令和4年 8月</dt>
-                  <dd class="history-content">
-                    AI自動翻訳 -高電社- 代理販売業務を開始
-                  </dd>
-                </dl>
-
-                <dl class="history-row">
-                  <dt class="history-date">令和7年 2月</dt>
-                  <dd class="history-content">
-                    本店を四ツ谷東京オフィスに移転
-                  </dd>
-                </dl>
-
-                <dl class="history-row">
-                  <dt class="history-date">令和8年 1月</dt>
-                  <dd class="history-content">本店を渋谷に移転</dd>
-                </dl>
-              </div>
-            </div>
-            <div class="p-history__images">
-              <div class="p-history__img-top">
-                <img src="images/company_2.jpg" alt="オフィス全体" />
-              </div>
-              <div class="p-history__img-bottom">
-                <img src="images/company_3.jpg" alt="会議室1" />
-                <img src="images/company_3.jpg" alt="会議室2" />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      で囲って隠してください
+      =============================================================  -->
     </main>
 
     <footer class="footer">
@@ -278,7 +292,7 @@
               渋谷マークシティウエスト22F
             </p>
 
-            <a href="#" class="footer-contact-link">
+            <a href="#contact" class="footer-contact-link">
               <div class="icon-btn mail-icon">
                 <svg
                   version="1.1"
@@ -314,7 +328,7 @@
             <ul>
               <li><a href="company.html">会社概要</a></li>
               <li><a href="vision.html">事業方針</a></li>
-              <li><a href="service.html">事業内容</a></li>
+              <li><a href="service.html">事業案内</a></li>
               <li><a href="recruit.html">採用情報</a></li>
               <li><a href="privacy.html">プライバシーポリシー</a></li>
             </ul>
@@ -354,6 +368,7 @@
                 <span class="arrow-icon">→</span>
               </a>
             </li>
+
             <li class="drawer-item">
               <div class="drawer-link">
                 <div class="text-group"><span class="jp">事業紹介</span></div>
@@ -361,11 +376,11 @@
 
               <ul class="drawer-sub-list">
                 <li><a href="vision.html">- 事業方針</a></li>
-                <li><a href="#">- 事業案内</a></li>
+                <li><a href="service.html">- 事業案内</a></li>
               </ul>
             </li>
             <li class="drawer-item">
-              <a href="#" class="drawer-link"
+              <a href="recruit.html" class="drawer-link"
                 ><div class="text-group"><span class="jp">採用情報</span></div>
                 <span class="arrow-icon">→</span></a
               >
