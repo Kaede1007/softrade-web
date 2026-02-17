@@ -1,5 +1,5 @@
 export const config = {
-  matcher: ["/(.*)"], // すべてのページに適用
+  matcher: ["/(.*)"],
 };
 
 export default function middleware(req: Request) {
@@ -9,10 +9,10 @@ export default function middleware(req: Request) {
     const authValue = authHeader.split(" ")[1];
     const [user, pwd] = atob(authValue).split(":");
 
-    // 環境変数に設定した値と照合
+    // (process as any) と書くことで、エラーを回避します
     if (
-      user === process.env.BASIC_AUTH_USER &&
-      pwd === process.env.BASIC_AUTH_PASSWORD
+      user === (process as any).env.BASIC_AUTH_USER &&
+      pwd === (process as any).env.BASIC_AUTH_PASSWORD
     ) {
       return new Response(null, {
         status: 200,
